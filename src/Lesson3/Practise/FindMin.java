@@ -1,4 +1,4 @@
-package Lesson3.Practise;
+package lesson3.practise;
 
 
 public class FindMin {

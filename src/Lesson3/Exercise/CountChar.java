@@ -1,4 +1,4 @@
-package Lesson3.Exercise;
+package lesson3.exercise;
 
 public class CountChar {
     public static void main(String[] args) {
