@@ -10,8 +10,6 @@ public class Display {
         System.out.println("Volume of cylinder: "+cylinder.getVolume());
         System.out.println(circle.toString());
         System.out.println(cylinder.toString());
-        System.out.println(cylinder.toString());
-        System.out.println(cylinder.toString());
-        System.out.println(cylinder.toString());
+
     }
 }
