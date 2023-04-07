@@ -2,6 +2,7 @@ package lesson5.exercise.class_students;
 
 public class TestStudents {
     public static void main(String[] args) {
+
         Students students = new Students();
         Students students2 = new Students();
         Students students3 = new Students();
