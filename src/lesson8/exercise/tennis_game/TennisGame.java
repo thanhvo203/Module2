@@ -7,9 +7,9 @@ public class TennisGame {
     private static String playerName2;
 
 
-    public static String getScoreDeude(int playerScore1, int playerScore2){
+    public static String equalScore(int playerScore1, int playerScore2) {
         String score = "";
-        if (playerScore1==playerScore2) {
+        if (playerScore1 == playerScore2) {
             switch (playerScore1) {
                 case 0:
                     score = "Love-All";
@@ -31,29 +31,32 @@ public class TennisGame {
         }
         return score;
     }
-    public static String checkDeuce(){
+
+    public static String advantagePlayer() {
         int pointAdvantage = playerScore1 - playerScore2;
-        if(pointAdvantage == 1){
-            return playerName1  = "Advantage player1";
-        }else{
-            return playerName2  = "Advantage player2";
+        if (pointAdvantage == 1) {
+            return playerName1 = "Advantage player1";
+        } else {
+            return playerName2 = "Advantage player2";
         }
     }
-    public static String win(){
+
+    public static String win() {
         int pointWin = playerScore1 - playerScore2;
-        if(pointWin >=2){
+        if (pointWin >= 2) {
             return playerName1 = "Win for player1";
-        }else{
+        } else {
             return playerName1 = "Win for player2";
         }
     }
-    public static String getScore(String playerName1, String playerName2, int playerScore1, int playerScore2){
-        String score ="";
+
+    public static String getScore(String playerName1, String playerName2, int playerScore1, int playerScore2) {
+        String score = " ";
         int countScore = 0;
         for (int i = 1; i < 3; i++) {
-            if(i == 1){
+            if (i == 1) {
                 countScore = playerScore1;
-            }else{
+            } else {
                 score += "-";
                 countScore = playerScore2;
             }
