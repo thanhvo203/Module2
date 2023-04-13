@@ -63,15 +63,19 @@ public class MyList<E> {
       return -1;
     }
     public boolean add(E o) {
-        if(size <= elements.length){
-           elements[size++] = o;
-        }
+        ensureCapacity(size+1);
+        elements[size++] = o;
         return true;
     }
 
     public void ensureCapacity(int minCapacity) {
-      int newArray = elements.length*2;
-       elements = Arrays.copyOf(elements, newArray);
+       int oldCapacity = elements.length;
+       int newCapacity = oldCapacity *2;
+       if(newCapacity - minCapacity < 0){
+           newCapacity = minCapacity;
+       }
+       elements = Arrays.copyOf(elements,newCapacity);
+
     }
 
     public E get(int i) {
