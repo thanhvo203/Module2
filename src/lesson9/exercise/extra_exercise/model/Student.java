@@ -1,23 +1,22 @@
-package lesson9.exercise.extra_exercise;
+package lesson9.exercise.extra_exercise.model;
 
-import java.util.Date;
 import java.util.Scanner;
 
-public class Student extends Person{
-    private int classOfStudent;
+public class Student extends Person {
+    private String classOfStudent;
     private double score;
 
-    public Student(int id, String name, int date, String gender, int classOfStudent, double score) {
+    public Student(int id, String name, String date, boolean gender, String classOfStudent, double score) {
         super(id, name, date, gender);
         this.classOfStudent = classOfStudent;
         this.score = score;
     }
 
-    public int getClassOfStudent() {
+    public String getClassOfStudent() {
         return classOfStudent;
     }
 
-    public void setClassOfStudent(int classOfStudent) {
+    public void setClassOfStudent(String classOfStudent) {
         this.classOfStudent = classOfStudent;
     }
 
@@ -27,10 +26,6 @@ public class Student extends Person{
 
     public void setScore(double score) {
         this.score = score;
-    }
-    public void add(Scanner sc){
-        System.out.println("NHập");
-
     }
 
     @Override

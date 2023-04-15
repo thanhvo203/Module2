@@ -1,11 +1,9 @@
-package lesson9.exercise.extra_exercise;
+package lesson9.exercise.extra_exercise.model;
 
-import java.util.Date;
-
-public class Teacher extends Person {
+public class Teacher extends Person{
     private String specialize;
 
-    public Teacher(int id, String name, int date, String gender, String specialize) {
+    public Teacher(int id, String name, String date, boolean gender, String specialize) {
         super(id, name, date, gender);
         this.specialize = specialize;
     }

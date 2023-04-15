@@ -1,14 +1,13 @@
-package lesson9.exercise.extra_exercise;
-
-import java.util.Date;
+package lesson9.exercise.extra_exercise.model;
 
 public class Person {
+
     private int id;
     private String name;
-    private int date;
-    private String gender;
+    private String date;
+    private boolean gender;
 
-    public Person(int id, String name, int date, String gender) {
+    public Person(int id, String name, String date, boolean gender) {
         this.id = id;
         this.name = name;
         this.date = date;
@@ -31,19 +30,19 @@ public class Person {
         this.name = name;
     }
 
-    public int getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(int date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
-    public String getGender() {
+    public boolean isGender() {
         return gender;
     }
 
-    public void setGender(String gender) {
+    public void setGender(boolean gender) {
         this.gender = gender;
     }
 
