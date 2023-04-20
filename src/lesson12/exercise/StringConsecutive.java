@@ -13,8 +13,7 @@ public class StringConsecutive {
         LinkedList<Character> characters1 = new LinkedList<>();
 
         for (int i = 0; i < string.length(); i++) {
-            if (characters.size() > 1 && string.charAt(i) <= characters.getLast() &&
-                    characters.contains(string.charAt(i))) {
+            if (characters.size() >= 1 && string.charAt(i) <= characters.getLast()) {
                 characters.clear();
             }
 
