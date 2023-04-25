@@ -1,4 +1,4 @@
-package lesson16.exercise;
+package lesson16.exercise.copy_file;
 
 import java.io.*;
 import java.util.Scanner;
@@ -6,8 +6,8 @@ import java.util.Scanner;
 public class CopyBinaryFile {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        File sourceFile = new File("lesson16/exercise/source_file");
-        File targetFile = new File("lesson16/exercise/target_file");
+        File sourceFile = new File("lesson16/exercise/copy_file/source_file");
+        File targetFile = new File("lesson16/exercise/copy_file/target_file");
         InputStream inputStream = null;
         OutputStream outputStream = null;
 
