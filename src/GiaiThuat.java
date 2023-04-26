@@ -5,16 +5,17 @@ import java.util.Locale;
 
 public class GiaiThuat {
     public static void main(String[] args) {
-        String result ="";
-        String string = "CodegymDaNang";
-        String[] n = string.split("");
-        for (int i = 0; i < n.length; i++) {
-            if (n[i].equals(n[i].toUpperCase()) && i > 0 ) {
-                result+=" " + n[i].toLowerCase();
-            }else{
-                result+= n[i];
+        int[] arr = {-1, 150, 190, 170, -1, -1, 160, 180};
+        int min = -1;
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = i; j < arr.length ; j++) {
+                if(arr[i] > arr[j] && arr[i]!=-1 && arr[j] != -1 ){
+                    int temp =  arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+                }
             }
-            System.out.println(result.toLowerCase());
         }
+        System.out.println(Arrays.toString(arr));
     }
 }
