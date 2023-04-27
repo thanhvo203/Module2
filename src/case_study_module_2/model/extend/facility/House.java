@@ -7,11 +7,11 @@ public class House extends AbstractFacility {
     private String standardRoom;
     private int numberOfFloors;
 
-    public House(int serviceCode, String serviceName, double usableArea, double price, int numberOfPeople, String rentalType) {
+    public House(String serviceCode, String serviceName, double usableArea, double price, int numberOfPeople, String rentalType) {
         super(serviceCode, serviceName, usableArea, price, numberOfPeople, rentalType);
     }
 
-    public House(int serviceCode, String serviceName, double usableArea, double price, int numberOfPeople, String rentalType, String standardRoom, int numberOfFloors) {
+    public House(String serviceCode, String serviceName, double usableArea, double price, int numberOfPeople, String rentalType, String standardRoom, int numberOfFloors) {
         super(serviceCode, serviceName, usableArea, price, numberOfPeople, rentalType);
         this.standardRoom = standardRoom;
         this.numberOfFloors = numberOfFloors;
@@ -39,5 +39,8 @@ public class House extends AbstractFacility {
                 "standardRoom='" + standardRoom + '\'' +
                 ", numberOfFloors=" + numberOfFloors +
                 ']';
+    }
+    public String saveFileHouse(){
+        return "House: "+saveFileFacility()+", StandardRoom: "+standardRoom+",NumberOfFloors: "+ numberOfFloors;
     }
 }

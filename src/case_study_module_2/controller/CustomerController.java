@@ -22,10 +22,13 @@ public class CustomerController {
             choiceCustomer = sc.nextInt();
             switch (choiceCustomer) {
                 case 1:
+                    customerService.displayList();
                     break;
                 case 2:
+                    customerService.addNew();
                     break;
                 case 3:
+                    customerService.edit();
                     break;
                 case 4:
                     break;

@@ -8,11 +8,11 @@ public class Villa extends AbstractFacility {
     private double poolArea;
     private int numberOfFloors;
 
-    public Villa(int serviceCode, String serviceName, double usableArea, double price, int numberOfPeople, String rentalType) {
+    public Villa(String serviceCode, String serviceName, double usableArea, double price, int numberOfPeople, String rentalType) {
         super(serviceCode, serviceName, usableArea, price, numberOfPeople, rentalType);
     }
 
-    public Villa(int serviceCode, String serviceName, double usableArea, double price, int numberOfPeople, String rentalType, String standardRoom, double poolArea, int numberOfFloors) {
+    public Villa(String serviceCode, String serviceName, double usableArea, double price, int numberOfPeople, String rentalType, String standardRoom, double poolArea, int numberOfFloors) {
         super(serviceCode, serviceName, usableArea, price, numberOfPeople, rentalType);
         this.standardRoom = standardRoom;
         this.poolArea = poolArea;
@@ -50,5 +50,9 @@ public class Villa extends AbstractFacility {
                 " , poolArea=" + poolArea +
                 " , numberOfFloors=" + numberOfFloors +
                 ']';
+    }
+    public String saveFileVilla(){
+        return "Villa: "+ saveFileFacility()+",StandardRoom: "+standardRoom +",PoolArea: "+poolArea+
+                ",NumberOfFloors: "+numberOfFloors;
     }
 }

@@ -1,4 +1,4 @@
-package controller;
+package case_study_module_2.controller;
 
 import case_study_module_2.service.implement_service.BookingService;
 

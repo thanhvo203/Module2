@@ -16,7 +16,7 @@ public class EmployeeService implements IEmployeeService {
     @Override
     public void displayList() {
         List<Employee> employeeList = employeeRepository.showList();
-        for (Employee employee: employeeList) {
+        for (Employee employee : employeeList) {
             System.out.println(employee.writeToFile());
         }
     }
@@ -24,29 +24,44 @@ public class EmployeeService implements IEmployeeService {
     @Override
     public void addNew() {
         String employeeID;
-        do{
-            System.out.println("Nhập id");
+        do {
+            System.out.println("Enter id: ");
             employeeID = sc.nextLine();
-        }while (!ValidateEmployee.checkID(employeeID));
-        System.out.println("Enter Full Name: ");
-        String employeeName = sc.nextLine();
-        System.out.println("Enter day of birth: ");
-        String employeeDate = sc.nextLine();
+        } while (!ValidateEmployee.checkID(employeeID));
+       String employeeName;
+       do {
+           System.out.println("Enter Full Name: ");
+            employeeName = sc.nextLine();
+       }while (!ValidateEmployee.checkName(employeeName));
+       String employeeDate;
+       do {
+           System.out.println("Enter day of birth: ");
+           employeeDate = sc.nextLine();
+       }while (!ValidateEmployee.checkAge(employeeDate));
         System.out.println("Enter gender: ");
         String employeeGender = sc.nextLine();
-        System.out.println("Enter identityNumber: ");
-        String employeeIdentityNumber = sc.nextLine();
-        System.out.println("Enter PhoneNumber");
-        String employeePhoneNumber = sc.nextLine();
+        String employeeIdentityNumber;
+        do {
+            System.out.println("Enter identityNumber: ");
+            employeeIdentityNumber = sc.nextLine();
+        }while (!ValidateEmployee.checkIdentityNumber(employeeIdentityNumber));
+        String employeePhoneNumber;
+        do {
+             System.out.println("Enter PhoneNumber");
+             employeePhoneNumber = sc.nextLine();
+        }while (!ValidateEmployee.checkPhoneNumber(employeePhoneNumber));
         System.out.println("Enter email: ");
         String employeeEmail = sc.nextLine();
         System.out.println("Enter degree");
         String employeeDegree = sc.nextLine();
         System.out.println("Enter position: ");
         String employeePosition = sc.nextLine();
-        System.out.println("Enter salary: ");
-        double employeeSalary = sc.nextDouble();
-        Employee newEmployee = new Employee(employeeID,employeeName,employeeDate,employeeGender,employeeIdentityNumber,employeePhoneNumber,employeeEmail,employeeDegree,employeePosition,employeeSalary);
+        double employeeSalary;
+        do {
+            System.out.println("Enter salary: ");
+            employeeSalary = sc.nextDouble();
+        }while (employeeSalary <= 0);
+        Employee newEmployee = new Employee(employeeID, employeeName, employeeDate, employeeGender, employeeIdentityNumber, employeePhoneNumber, employeeEmail, employeeDegree, employeePosition, employeeSalary);
         employeeRepository.addNew(newEmployee);
         System.out.println("Add success!!!");
     }
@@ -57,41 +72,59 @@ public class EmployeeService implements IEmployeeService {
         String id = sc.nextLine();
         int check = employeeRepository.checkId(id);
         List<Employee> employeeList = employeeRepository.showList();
-        if(check >= 0){
-                   System.out.println("Enter ID: ");
-                   String employeeID = sc.nextLine();
-                   employeeList.get(check).setId(employeeID);
-                   System.out.println("Enter Full Name: ");
-                   String employeeName = sc.nextLine();
-                   employeeList.get(check).setFullName(employeeName);
-                   System.out.println("Enter day of birth: ");
-                   String employeeDate = sc.nextLine();
-                   employeeList.get(check).setDateOfBirth(employeeDate);
-                   System.out.println("Enter gender: ");
-                   String employeeGender = sc.nextLine();
-                   employeeList.get(check).setGender(employeeGender);
-                   System.out.println("Enter identityNumber: ");
-                   String employeeIdentityNumber = sc.nextLine();
-                   employeeList.get(check).setIdentityNumber(employeeIdentityNumber);
-                   System.out.println("Enter PhoneNumber");
-                   String employeePhoneNumber = sc.nextLine();
-                   employeeList.get(check).setPhoneNumber(employeePhoneNumber);
-                   System.out.println("Enter email: ");
-                   String employeeEmail = sc.nextLine();
-                   employeeList.get(check).setEmail(employeeEmail);
-                   System.out.println("Enter degree");
-                   String employeeDegree = sc.nextLine();
-                   employeeList.get(check).setDegree(employeeDegree);
-                   System.out.println("Enter position: ");
-                   String employeePosition = sc.nextLine();
-                   employeeList.get(check).setPositionEmployee(employeePosition);
-                   System.out.println("Enter salary: ");
-                   double employeeSalary = sc.nextDouble();
-                   employeeList.get(check).setSalary(employeeSalary);
-                   employeeRepository.edit();
-            }else{
+        if (check >= 0) {
+            String employeeID;
+            do {
+                System.out.println("Enter id: ");
+                employeeID = sc.nextLine();
+            } while (!ValidateEmployee.checkID(employeeID));
+            employeeList.get(check).setId(employeeID);
+            String employeeName;
+            do {
+                System.out.println("Enter Full Name: ");
+                employeeName = sc.nextLine();
+            }while (!ValidateEmployee.checkName(employeeName));
+            employeeList.get(check).setFullName(employeeName);
+            String employeeDate;
+            do {
+                System.out.println("Enter day of birth: ");
+                employeeDate = sc.nextLine();
+            }while (!ValidateEmployee.checkAge(employeeDate));
+            employeeList.get(check).setDateOfBirth(employeeDate);
+            System.out.println("Enter gender: ");
+            String employeeGender = sc.nextLine();
+            employeeList.get(check).setGender(employeeGender);
+            String employeeIdentityNumber;
+            do {
+                System.out.println("Enter identityNumber: ");
+                employeeIdentityNumber = sc.nextLine();
+            }while (!ValidateEmployee.checkIdentityNumber(employeeIdentityNumber));
+            employeeList.get(check).setIdentityNumber(employeeIdentityNumber);
+            String employeePhoneNumber;
+            do {
+                System.out.println("Enter PhoneNumber");
+                employeePhoneNumber = sc.nextLine();
+            }while (!ValidateEmployee.checkIdentityNumber(employeePhoneNumber));
+            employeeList.get(check).setPhoneNumber(employeePhoneNumber);
+            System.out.println("Enter email: ");
+            String employeeEmail = sc.nextLine();
+            employeeList.get(check).setEmail(employeeEmail);
+            System.out.println("Enter degree");
+            String employeeDegree = sc.nextLine();
+            employeeList.get(check).setDegree(employeeDegree);
+            System.out.println("Enter position: ");
+            String employeePosition = sc.nextLine();
+            employeeList.get(check).setPositionEmployee(employeePosition);
+            double employeeSalary;
+            do {
+                System.out.println("Enter salary: ");
+                employeeSalary = sc.nextDouble();
+            }while (employeeSalary <= 0);
+            employeeList.get(check).setSalary(employeeSalary);
+            employeeRepository.edit();
+        } else {
             System.out.println("Not found id!!!");
         }
-        }
     }
+}
 

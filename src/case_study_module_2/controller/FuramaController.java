@@ -1,7 +1,7 @@
 package case_study_module_2.controller;
 
-import controller.BookingController;
-
+import javax.swing.*;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class FuramaController {
@@ -22,35 +22,29 @@ public class FuramaController {
                     "4.Booking Management \n" +
                     "5.Promotion Management \n" +
                     "6.Exit");
-            int choice;
-            try {
-                System.out.println("Please choose option: ");
-                choice = sc.nextInt();
-            } catch (NumberFormatException e) {
-                do {
-                    System.out.println("You choose wrong, please choose again");
-                    choice = sc.nextInt();
-                } while (choice > 6 || choice < 1);
-            }
+            System.out.println("Please choose option: ");
+            String choice = sc.nextLine();
             switch (choice) {
-                case 1:
+                case "1":
                     employeeController.displayEmployeeList();
                     break;
-                case 2:
+                case "2":
                     customerController.displayCustomerList();
                     break;
-                case 3:
+                case "3":
                     facilityController.displayFacilityList();
                     break;
-                case 4:
+                case "4":
                     bookingController.displayBookingList();
                     break;
-                case 5:
+                case "5":
                     contactController.displayPromotion();
                     break;
-                case 6:
+                case "6":
                     flag = false;
                     break;
+                default:
+                        System.err.println("Please input number from 1 to 6!!!");
             }
         } while (flag);
     }

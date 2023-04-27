@@ -40,4 +40,7 @@ public class Customer extends AbstractPerson {
                 " , address='" + address + '\'' +
                 ']';
     }
+    public String writeToFileCustomer(){
+        return "Customer: "+saveFile() +"Type: "+typeOfCustomer + ",Address: " + address;
+    }
 }

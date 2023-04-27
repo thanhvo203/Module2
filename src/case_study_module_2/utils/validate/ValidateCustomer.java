@@ -1,23 +1,30 @@
 package case_study_module_2.utils.validate;
-import java.lang.reflect.Parameter;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.Year;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class ValidateEmployee {
-
-    public static boolean checkID(String id){
-        Pattern patternID = Pattern.compile("^NV-[0-9]{4}$");
-        Matcher matcher = patternID.matcher(id);
+public class ValidateCustomer {
+    public static boolean checkIDCustomer(String id){
+        Pattern pattern = Pattern.compile("^KH-[0-9]{4}$");
+        Matcher matcher = pattern.matcher(id);
+        return matcher.matches();
+    }
+    public static boolean checkIdentityNumberCus(String identity){
+        Pattern pattern = Pattern.compile("^([0-9]{9}|[0-9]{12})$");
+        Matcher matcher = pattern.matcher(identity);
+        return matcher.matches();
+    }
+    public static boolean checkPhoneNumber(String phone){
+        Pattern pattern = Pattern.compile("^0[0-9]{9}$");
+        Matcher matcher = pattern.matcher(phone);
         return matcher.matches();
     }
     public static boolean checkName(String name){
-        Pattern patternName = Pattern.compile("^([A-Z][a-z]+\s)+[A-Z][a-z]+$");
-        Matcher matcher = patternName.matcher(name);
+        Pattern pattern = Pattern.compile("^([A-Z][a-z]+\s)+[A-Z][a-z]+$");
+        Matcher matcher = pattern.matcher(name);
         return matcher.matches();
     }
     public static boolean checkAge(String dayOfBirth)  {
@@ -36,16 +43,5 @@ public class ValidateEmployee {
         }
         return false;
     }
-    public static boolean checkIdentityNumber(String identityNumber){
-        Pattern pattern = Pattern.compile("^([0-9]{9}|[0-9]{12})$");
-        Matcher matcher = pattern.matcher(identityNumber);
-        return matcher.matches();
-    }
-    public static boolean checkPhoneNumber(String phoneNumber){
-        Pattern pattern = Pattern.compile("^0[0-9]{9}$");
-        Matcher matcher = pattern.matcher(phoneNumber);
-        return matcher.matches();
-    }
-
 
 }
