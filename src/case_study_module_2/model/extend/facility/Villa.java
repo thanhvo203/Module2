@@ -3,6 +3,8 @@ package case_study_module_2.model.extend.facility;
 
 import case_study_module_2.model.absract.facility.AbstractFacility;
 
+import java.util.Objects;
+
 public class Villa extends AbstractFacility {
     private String standardRoom;
     private double poolArea;
@@ -45,14 +47,26 @@ public class Villa extends AbstractFacility {
 
     @Override
     public String toString() {
-        return "Villa [" +super.toString() +
-                " , standardRoom='" + standardRoom + '\'' +
+        return  super.toString() +
+                " , standardRoom='" + standardRoom +
                 " , poolArea=" + poolArea +
-                " , numberOfFloors=" + numberOfFloors +
-                ']';
+                " , numberOfFloors=" + numberOfFloors;
     }
     public String saveFileVilla(){
-        return "Villa: "+ saveFileFacility()+",StandardRoom: "+standardRoom +",PoolArea: "+poolArea+
-                ",NumberOfFloors: "+numberOfFloors;
+        return saveFileFacility()+","+standardRoom +","+poolArea+
+                ","+numberOfFloors;
     }
+
+//    @Override
+//    public boolean equals(Object o) {
+//        if (this == o) return true;
+//        if (o == null || getClass() != o.getClass()) return false;
+//        Villa villa = (Villa) o;
+//        return this.getServiceCode().equals(villa.getServiceCode());
+//    }
+//
+//    @Override
+//    public int hashCode() {
+//        return Objects.hash(standardRoom, poolArea, numberOfFloors);
+//    }
 }

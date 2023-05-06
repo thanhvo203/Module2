@@ -4,6 +4,7 @@ import case_study_module_2.model.extend.facility.House;
 
 
 import java.io.*;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -21,7 +22,7 @@ public class ReadAndWriteHouse {
         try {
             bufferedWriter = new BufferedWriter(new FileWriter(file,false));
             for (House house: houseList) {
-                bufferedWriter.write(house.saveFileHouse());
+                bufferedWriter.write(house.toString());
                 bufferedWriter.newLine();
             }
             bufferedWriter.flush();
@@ -31,7 +32,7 @@ public class ReadAndWriteHouse {
         }
     }
     public static List<House> readFileHouse(String locationFile){
-        List<House> houseList = new LinkedList<>();
+        List<House> houseList = new ArrayList<>();
         File file = new File(locationFile);
         if(!file.exists()){
             try {
@@ -44,7 +45,7 @@ public class ReadAndWriteHouse {
         try{
             bufferedReader = new BufferedReader(new FileReader(file));
             String temp = "";
-            while ((temp = bufferedReader.readLine())!= null && temp.equals("")){
+            while ((temp = bufferedReader.readLine())!= null && !temp.equals("")){
                 String[] houseArr = temp.split(",");
                 House newHouse = new House(houseArr[0],houseArr[1],Double.parseDouble(houseArr[2]),Double.parseDouble(houseArr[3]),
                         Integer.parseInt(houseArr[4]),houseArr[5],houseArr[6],Integer.parseInt(houseArr[7]));

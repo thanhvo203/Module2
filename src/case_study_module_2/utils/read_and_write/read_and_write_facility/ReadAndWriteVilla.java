@@ -21,7 +21,7 @@ public class ReadAndWriteVilla {
          try {
              bufferedWriter = new BufferedWriter(new FileWriter(file,false));
              for (Villa villa: villaList) {
-                bufferedWriter.write(villa.saveFileVilla());
+                bufferedWriter.write(villa.toString());
                 bufferedWriter.newLine();
              }
              bufferedWriter.flush();
@@ -31,7 +31,7 @@ public class ReadAndWriteVilla {
          }
     }
     public static List<Villa> readFileVilla(String locationFile){
-        List<Villa> villaList = new LinkedList<>();
+        List<Villa> villaList = new ArrayList<>();
         File file = new File(locationFile);
         if(!file.exists()){
             try {
@@ -44,7 +44,7 @@ public class ReadAndWriteVilla {
         try{
             bufferedReader = new BufferedReader(new FileReader(file));
             String temp = "";
-            while ((temp = bufferedReader.readLine())!= null && temp.equals("")){
+            while ((temp = bufferedReader.readLine())!= null && !temp.equals("")){
                 String[] villaArr = temp.split(",");
                 Villa newVilla = new Villa(villaArr[0],villaArr[1],Double.parseDouble(villaArr[2]),Double.parseDouble(villaArr[3]),
                         Integer.parseInt(villaArr[4]),villaArr[5],villaArr[6],Double.parseDouble(villaArr[7]),Integer.parseInt(villaArr[8]));

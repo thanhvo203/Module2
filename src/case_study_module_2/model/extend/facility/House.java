@@ -2,6 +2,8 @@ package case_study_module_2.model.extend.facility;
 
 import case_study_module_2.model.absract.facility.AbstractFacility;
 
+import java.util.Objects;
+
 
 public class House extends AbstractFacility {
     private String standardRoom;
@@ -41,6 +43,19 @@ public class House extends AbstractFacility {
                 ']';
     }
     public String saveFileHouse(){
-        return "House: "+saveFileFacility()+", StandardRoom: "+standardRoom+",NumberOfFloors: "+ numberOfFloors;
+        return saveFileFacility()+","+standardRoom+","+ numberOfFloors;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        House house = (House) o;
+        return this.getServiceCode().equals(house.getServiceCode());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(standardRoom);
     }
 }

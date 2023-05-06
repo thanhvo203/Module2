@@ -1,14 +1,14 @@
 package case_study_module_2.model.booking;
 
-public class Booking {
-    private int codeBooking;
+public class Booking implements Comparable<Booking> {
+    private String codeBooking;
     private String dateBooking;
     private String startDate;
     private String endDate;
-    private int codeCustomer;
-    private int serviceCode;
+    private String codeCustomer;
+    private String serviceCode;
 
-    public Booking(int codeBooking, String dateBooking, String startDate, String endDate, int codeCustomer, int serviceCode) {
+    public Booking(String codeBooking, String dateBooking, String startDate, String endDate, String codeCustomer, String serviceCode) {
         this.codeBooking = codeBooking;
         this.dateBooking = dateBooking;
         this.startDate = startDate;
@@ -17,11 +17,11 @@ public class Booking {
         this.serviceCode = serviceCode;
     }
 
-    public int getCodeBooking() {
+    public String getCodeBooking() {
         return codeBooking;
     }
 
-    public void setCodeBooking(int codeBooking) {
+    public void setCodeBooking(String codeBooking) {
         this.codeBooking = codeBooking;
     }
 
@@ -49,19 +49,19 @@ public class Booking {
         this.endDate = endDate;
     }
 
-    public int getCodeCustomer() {
+    public String getCodeCustomer() {
         return codeCustomer;
     }
 
-    public void setCodeCustomer(int codeCustomer) {
+    public void setCodeCustomer(String codeCustomer) {
         this.codeCustomer = codeCustomer;
     }
 
-    public int getServiceCode() {
+    public String getServiceCode() {
         return serviceCode;
     }
 
-    public void setServiceCode(int serviceCode) {
+    public void setServiceCode(String serviceCode) {
         this.serviceCode = serviceCode;
     }
 
@@ -75,5 +75,16 @@ public class Booking {
                 " , codeCustomer=" + codeCustomer +
                 " , serviceCode=" + serviceCode +
                 ']';
+    }
+    public String writeFileBooking(){
+        return codeBooking+","+dateBooking+","+startDate+","+endDate+","+codeCustomer+","+serviceCode;
+    }
+
+    @Override
+    public int compareTo(Booking o) {
+        if(this.startDate.equals(o.startDate)){
+            return this.endDate.compareTo(o.endDate);
+        }
+        return this.startDate.compareTo(o.startDate);
     }
 }

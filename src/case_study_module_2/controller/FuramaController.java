@@ -6,7 +6,6 @@ import java.util.Scanner;
 
 public class FuramaController {
     Scanner sc = new Scanner(System.in);
-    boolean flag = true;
     private EmployeeController employeeController = new EmployeeController();
     private CustomerController customerController = new CustomerController();
     private BookingController bookingController = new BookingController();
@@ -14,6 +13,7 @@ public class FuramaController {
     private ContactController contactController = new ContactController();
 
     public void displayMenu() {
+        boolean flag = true;
         do {
             System.out.println("----Select functions---- \n" +
                     "1.Employee Management \n" +
@@ -41,10 +41,12 @@ public class FuramaController {
                     contactController.displayPromotion();
                     break;
                 case "6":
+                    System.out.println("Out list!!!!!!");
                     flag = false;
                     break;
                 default:
-                        System.err.println("Please input number from 1 to 6!!!");
+                    System.err.println("Please input number from 1 to 6!!!");
+                    displayMenu();
             }
         } while (flag);
     }

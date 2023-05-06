@@ -8,7 +8,7 @@ import case_study_module_2.utils.read_and_write.ReadAndWriteEmployee;
 import java.util.List;
 
 public class EmployeeRepository implements IEmployeeRepository {
-    private static final String PATH = "D:\\Codegym\\case_study_module_2\\src\\data\\employee_data.csv";
+    private static final String PATH = "D:\\Codegym\\module2\\src\\case_study_module_2\\data\\person_data\\employee_data.csv";
     private static List<Employee> employeeList = ReadAndWriteEmployee.readFile(PATH);
 
     @Override

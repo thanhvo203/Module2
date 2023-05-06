@@ -44,7 +44,7 @@ public class Employee extends AbstractPerson {
     }
 
     public String writeToFile(){
-        return "Employee: "+ saveFile()+"Degree: "+ degree + ",Position: " + positionEmployee + ",Salary " + salary;
+        return  saveFile()+","+degree+","+positionEmployee+","+salary;
     }
 
     @Override

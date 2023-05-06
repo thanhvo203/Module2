@@ -35,12 +35,12 @@ public class Customer extends AbstractPerson {
 
     @Override
     public String toString() {
-        return "Customer [" + super.toString() +
-                " , typeOfCustomer='" + typeOfCustomer + '\'' +
-                " , address='" + address + '\'' +
-                ']';
+        return  super.getId() + ","+ super.getFullName()+","+super.getDateOfBirth()+","+super.getGender()+","+
+                super.getIdentityNumber()+","+super.getPhoneNumber()+","+super.getEmail()+
+                "," +typeOfCustomer +
+                ", "+ address;
     }
     public String writeToFileCustomer(){
-        return "Customer: "+saveFile() +"Type: "+typeOfCustomer + ",Address: " + address;
+        return saveFile() +","+typeOfCustomer + "," + address;
     }
 }

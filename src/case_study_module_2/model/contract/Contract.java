@@ -1,31 +1,31 @@
 package case_study_module_2.model.contract;
 
 public class Contract {
-    private int codeContract;
-    private int codeBooking;
+    private String codeContract;
+    private String codeBooking;
     private double advanceMoney;
     private double totalMoney;
 
-    public Contract(int codeContract, int codeBooking, double advanceMoney, double totalMoney) {
+    public Contract(String codeContract, String codeBooking, double advanceMoney, double totalMoney) {
         this.codeContract = codeContract;
         this.codeBooking = codeBooking;
         this.advanceMoney = advanceMoney;
         this.totalMoney = totalMoney;
     }
 
-    public int getCodeContract() {
+    public String getCodeContract() {
         return codeContract;
     }
 
-    public void setCodeContract(int codeContract) {
+    public void setCodeContract(String codeContract) {
         this.codeContract = codeContract;
     }
 
-    public int getCodeBooking() {
+    public String getCodeBooking() {
         return codeBooking;
     }
 
-    public void setCodeBooking(int codeBooking) {
+    public void setCodeBooking(String codeBooking) {
         this.codeBooking = codeBooking;
     }
 
@@ -53,5 +53,8 @@ public class Contract {
                 " , advanceMoney=" + advanceMoney +
                 " , totalMoney=" + totalMoney +
                 "]";
+    }
+    public String writeFileContract(){
+        return codeContract + ","+codeBooking+","+advanceMoney+","+totalMoney;
     }
 }

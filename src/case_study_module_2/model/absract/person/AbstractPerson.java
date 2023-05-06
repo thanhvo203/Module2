@@ -76,7 +76,8 @@ public abstract class AbstractPerson {
     }
 
    public String saveFile(){
-        return "ID: "+id + ", FullName:  " + fullName + ",Day of birth:  "+ dateOfBirth + ",Gender: "+ gender +",IdentityNumber: "+identityNumber+",Phone Number: "+phoneNumber+",Email: "+
-                email+",";
+        return id + "," + fullName + ","+ dateOfBirth + ","+ gender +","+identityNumber+","+phoneNumber+","+
+                email;
    }
+
 }

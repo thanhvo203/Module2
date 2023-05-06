@@ -55,7 +55,7 @@ public class ReadAndWriteEmployee {
         try {
             bufferedWriter = new BufferedWriter(new FileWriter(file, false));
             for (Employee employee: employeeList) {
-                bufferedWriter.write(employee.writeToFile());
+                bufferedWriter.write(employee.toString());
                 bufferedWriter.newLine();
             }
             bufferedWriter.flush();

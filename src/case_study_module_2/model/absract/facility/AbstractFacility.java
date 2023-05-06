@@ -67,17 +67,17 @@ public abstract class AbstractFacility {
 
     @Override
     public String toString() {
-        return "AbstractFacility : " +
+        return "AbstractFacility Villa : " +
                 " , serviceCode=" + serviceCode +
-                " , serviceName='" + serviceName + '\'' +
+                " , serviceName='" + serviceName +
                 " , usableArea=" + usableArea +
                 " , price=" + price +
                 " , numberOfPeople=" + numberOfPeople +
-                " , rentalType='" + rentalType + '\'' +
-                ']';
+                " , rentalType='" + rentalType;
     }
     public String saveFileFacility(){
-        return "Servicecode: "+serviceCode + ", ServiceName :  " + serviceName + ",Useable Area:  "+ usableArea + ",Price: "+ price +",TotalPeople : "+numberOfPeople+",Phone Number: "+
-                ",RentalType: "+ rentalType;
+        return serviceCode+ "," + serviceName + ","+
+                usableArea + ","+ price +", "+numberOfPeople+
+                ","+ rentalType;
     }
 }

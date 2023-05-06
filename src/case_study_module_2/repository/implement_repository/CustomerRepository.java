@@ -7,7 +7,7 @@ import case_study_module_2.utils.read_and_write.ReadAndWriteCustomer;
 import java.util.List;
 
 public class CustomerRepository implements ICustomerRepository {
-    private static final String PATH = "D:\\Codegym\\module2\\src\\case_study_module_2\\data\\customer_data.csv";
+    private static final String PATH = "D:\\Codegym\\module2\\src\\case_study_module_2\\data\\person_data\\customer_data.csv";
     private static List<Customer> customerList = ReadAndWriteCustomer.readFileCustomer(PATH);
     @Override
     public List<Customer> showList() {
